@@ -45,6 +45,10 @@
 #define BUTTON_FRESET   BUTTON_2
 #endif
 
+#ifndef PIN_DFU
+#define PIN_DFU         SIGNAL_DFU
+#endif
+
 // The primary LED is usually Red but not in all cases.
 #define LED_PRIMARY 0
 // The secondary LED, when available, is usually blue.
@@ -111,6 +115,8 @@ void led_tick(void);
 
 void button_init(uint32_t pin);
 bool button_pressed(uint32_t pin);
+
+void signal_init(uint32_t signal_pin);
 
 bool is_ota(void);
 

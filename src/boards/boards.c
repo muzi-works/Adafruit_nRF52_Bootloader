@@ -63,6 +63,12 @@ bool button_pressed(uint32_t pin) {
   return nrf_gpio_pin_read(pin) == active_state;
 }
 
+void signal_init(uint32_t signal_pin)
+{
+  nrf_gpio_cfg_output(signal_pin);
+  nrf_gpio_pin_write(signal_pin, 1);
+}
+
 // This is declared so that a board specific init can be called from here.
 void __attribute__((weak)) board_init2(void) {}
 
@@ -76,6 +82,7 @@ void board_init(void) {
 
   button_init(BUTTON_DFU);
   button_init(BUTTON_FRESET);
+  signal_init(PIN_DFU);
   NRFX_DELAY_US(100); // wait for the pin state is stable
 
 #if LEDS_NUMBER > 0
