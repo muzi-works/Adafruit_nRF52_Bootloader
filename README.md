@@ -1,3 +1,21 @@
+# Bootloader for R1 Neo
+
+> [!TIP]
+> To flash the bootloader using adafruit-nrfutil over DFU Serial port
+> 
+> Linux example: `/dev/ttyACM0`
+> ```
+> make BOARD=r1_neo_board SD_VERSION=6.1.1 SERIAL=/dev/ttyACM0 flash-dfu
+>```
+> Mac example: `/dev/cu.usbmodem1101`
+> ```
+> make BOARD=r1_neo_board SD_VERSION=6.1.1 SERIAL=/dev/cu.usbmodem1101 flash-dfu
+>```
+
+Original Adafruit docs below.
+
+***
+
 # Adafruit nRF52 Bootloader
 
 [![Build Status](https://github.com/adafruit/Adafruit_nRF52_Bootloader/workflows/Build/badge.svg)](https://github.com/adafruit/Adafruit_nRF52_Bootloader/actions)
