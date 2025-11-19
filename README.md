@@ -1,19 +1,43 @@
 # Bootloader for R1 Neo
+<p align="center">
+  <img src="/muzi_r1_neo.svg" width=5%>
+</p>
 
 > [!TIP]
-> To flash the bootloader using adafruit-nrfutil over DFU Serial port
+> To compile and flash the bootloader in one command using adafruit-nrfutil over DFU Serial port
 > 
-> Linux example: `/dev/ttyACM0`
+> Linux example, connected via serial port `/dev/ttyACM0`:
 > ```
 > make BOARD=r1_neo_board SD_VERSION=6.1.1 SERIAL=/dev/ttyACM0 flash-dfu
 >```
-> Mac example: `/dev/cu.usbmodem1101`
+> Mac example, connected via serial port `/dev/cu.usbmodem1101`:
 > ```
 > make BOARD=r1_neo_board SD_VERSION=6.1.1 SERIAL=/dev/cu.usbmodem1101 flash-dfu
 >```
-
+## Build and Flash Process
+#### 1. Build the bootloader files using `make` with SoftDevice 6.1.1 (recommended) 
+```
+$ make BOARD=r1_neo_board SD_VERSION=6.1.1
+...
+Create r1_neo_board_bootloader-0.9.2-31-g990aa7f-dirty.hex
+Create r1_neo_board_bootloader-0.9.2-31-g990aa7f-dirty_nosd.hex
+Create update-r1_neo_board_bootloader-0.9.2-31-g990aa7f-dirty_nosd.uf2
+Converted to uf2, output size: 70144, start address: 0x0
+Wrote 70144 bytes to _build/build-r1_neo_board/update-r1_neo_board_bootloader-0.9.2-31-g990aa7f-dirty_nosd.uf2
+Create r1_neo_board_bootloader-0.9.2-31-g990aa7f-dirty_s140_6.1.1.hex
+Zip created at _build/build-r1_neo_board/r1_neo_board_bootloader-0.9.2-31-g990aa7f-dirty_s140_6.1.1.zip
+```
+#### 2a. Flash the bootloader using `adafruit-nrfutil`
+```
+$ adafruit-nrfutil --verbose dfu serial --package _build/build-r1_neo_board/r1_neo_board_bootloader-0.9.2-31-g990aa7f-dirty_s140_6.1.1.zip -p /dev/ttyACM0 -b 115200 --singlebank --touch 1200
+```
+#### 2b. Alternatively to create your own UF2 DFU update image for drag and drop
+Use the [Python conversion script](https://github.com/Microsoft/uf2/blob/master/utils/uf2conv.py) on a .bin file or .hex file, specifying the family as **0xADA52840** (nRF52840)
+```
+$ python3 uf2conv.py _build/build-r1_neo_board/r1_neo_board_bootloader-0.9.2-31-g990aa7f-dirty_s140_6.1.1.hex -c -f 0xADA52840
+```
+***
 Original Adafruit docs below.
-
 ***
 
 # Adafruit nRF52 Bootloader
