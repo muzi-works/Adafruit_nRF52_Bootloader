@@ -36,6 +36,8 @@ Use the [Python conversion script](https://github.com/Microsoft/uf2/blob/master/
 ```
 $ python3 uf2conv.py _build/build-r1_neo_board/r1_neo_board_bootloader-0.9.2-31-g990aa7f-dirty_s140_6.1.1.hex -c -f 0xADA52840
 ```
+## Download pre-built Bootloader files
+Latest release [files here](releases/tag/0.9.2).
 ***
 Original Adafruit docs below.
 ***
