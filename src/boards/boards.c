@@ -82,7 +82,9 @@ void board_init(void) {
 
   button_init(BUTTON_DFU);
   button_init(BUTTON_FRESET);
+  #ifdef _R1_NEO_BOARD_H
   signal_init(PIN_DFU);
+  #endif // _R1_NEO_BOARD_H
   NRFX_DELAY_US(100); // wait for the pin state is stable
 
 #if LEDS_NUMBER > 0
