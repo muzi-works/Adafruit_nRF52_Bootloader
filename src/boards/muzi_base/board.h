@@ -48,8 +48,8 @@
 //--------------------------------------------------------------------+
 // BLE OTA
 //--------------------------------------------------------------------+
-#define BLEDIS_MANUFACTURER   "muzi works"
-#define BLEDIS_MODEL          "MUZI BASE"
+#define BLEDIS_MANUFACTURER   "muzi ᴡᴏʀᴋꜱ"
+#define BLEDIS_MODEL          "muzi Base"
 
 //--------------------------------------------------------------------+
 // USB
@@ -61,9 +61,9 @@
 //--------------------------------------------------------------------+
 // UF2
 //--------------------------------------------------------------------+
-#define UF2_PRODUCT_NAME      "MUZI BASE"
-#define UF2_VOLUME_LABEL      "MUZI-BASE"
-#define UF2_BOARD_ID          "MUZI-BASE-Board"
+#define UF2_PRODUCT_NAME      "muzi Base"
+#define UF2_VOLUME_LABEL      "muzi-Base"
+#define UF2_BOARD_ID          "muzi-Base-Board"
 #define UF2_INDEX_URL         "https://muzi.works"
 
 
