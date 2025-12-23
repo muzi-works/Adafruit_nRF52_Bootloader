@@ -1,6 +1,6 @@
 # Bootloader for Base Duo + Base Uno
 <p align="center">
-  <img src="/muzi_r1_neo.svg" width=5%>
+  <img src="/muzi_base.png">
 </p>
 
 > [!TIP]
