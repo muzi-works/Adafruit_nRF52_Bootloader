@@ -1,3 +1,19 @@
+# Bootloader for Base Duo + Base Uno
+<p align="center">
+  <img src="/muzi_r1_neo.svg" width=5%>
+</p>
+
+> [!TIP]
+> To compile and flash the bootloader in one command using adafruit-nrfutil over DFU Serial port
+> 
+> Linux example, connected via serial port `/dev/ttyACM0`:
+> ```
+> make BOARD=muzi_base SD_VERSION=6.1.1 SERIAL=/dev/ttyACM0 flash-dfu
+>```
+> Mac example, connected via serial port `/dev/cu.usbmodem1101`:
+> ```
+> make BOARD=muzi_base SD_VERSION=6.1.1 SERIAL=/dev/cu.usbmodem1101 flash-dfu
+>```
 # Bootloader for R1 Neo
 <p align="center">
   <img src="/muzi_r1_neo.svg" width=5%>
@@ -38,6 +54,8 @@ $ python3 uf2conv.py _build/build-r1_neo_board/r1_neo_board_bootloader-0.9.2-31-
 ```
 ## Pre-built Bootloader files
 Download latest [release files](https://github.com/muzi-works/Adafruit_nrf52_Bootloader/releases).
+
+
 ***
 Original Adafruit docs below.
 ***
